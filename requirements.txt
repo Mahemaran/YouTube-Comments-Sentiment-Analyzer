@@ -1,0 +1,6 @@
+streamlit
+google-api-python-client
+pandas
+vaderSentiment
+plotly
+googletrans==4.0.0-rc1
