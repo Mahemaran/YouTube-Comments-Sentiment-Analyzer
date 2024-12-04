@@ -62,13 +62,13 @@ api_key = "AIzaSyCbwvV9RgIX0B5vpe_0ki9SiHFwmi2a_9Y"
 video_link = st.text_input("Enter YouTube Video link:")
 # use REGex to extract ID
 def extract_video_id(url):
-    try:
-        if "v=" in url:
-            return url.split("v=")[1].split("&")[0]
-        else:
-            return None
-    except IndexError:
-        return None
+    # Define regex for YouTube video IDs
+    pattern = r"(?:v=|\/)([0-9A-Za-z_-]{11})(?:\?|&|$)"
+    match = re.search(pattern, url)
+    if match:
+        return match.group(1)
+    else:
+        return "No valid video ID found."
 video_id = extract_video_id(video_link)
 # Button to fetch and analyze comments
 if st.button("Analyze Comments"):
