@@ -56,6 +56,7 @@ def get_sentiment(comment):
         return f'neutral'
 
 # Streamlit app
+st.set_page_config(page_title="YouTube comments", page_icon="📺", layout="centered")
 st.title("YouTube Comments Sentiment Analyzer")
 
 api_key = "AIzaSyCbwvV9RgIX0B5vpe_0ki9SiHFwmi2a_9Y"
